@@ -1,0 +1,22 @@
+:root {
+    --settings: 2s cubic-bezier(0.075, 0.82, 0.165, 1) 1s alternate-reverse infinite;
+}
+
+.one {
+    animation: scale-one var(--settings);
+    z-index: 1;
+}
+
+.two {
+    width: 66px;
+    height: 66px;
+    z-index: 2;
+    animation: scale-two var(--settings); 
+}
+
+.three {
+    width: 33px;
+    height: 33px;
+    z-index: 3;
+    animation: scale-three var(--settings);
+}

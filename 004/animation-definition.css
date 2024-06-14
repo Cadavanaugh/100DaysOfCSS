@@ -1,0 +1,29 @@
+@keyframes scale-one {
+    0% {
+        transform: scale(0);
+    }
+
+    20%, 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-two {
+    0%, 20% {
+        transform: scale(0);
+    }
+
+    40%, 100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-three {
+    0%, 40% {
+        transform: scale(0);
+    }
+
+    60%, 100% {
+        transform: scale(1);
+    }
+}
