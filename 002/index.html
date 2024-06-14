@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+    <title>Day 2</title>
+</head>
+<body>
+    <main>
+        <div class="stripe top"></div>
+        <div class="stripe middle"></div>
+        <div class="stripe bottom"></div>
+    </main>
+    <script>
+        let clicked = false
+        document.querySelector('main').addEventListener('click', () => {
+            if (!clicked) {
+                document.querySelector('.top').style.animation = "top-stripe-in .7s ease-in-out forwards"
+                document.querySelector('.middle').style.animation = "middle-stripe-in .7s ease-in-out forwards"
+                document.querySelector('.bottom').style.animation = "bottom-stripe-in .7s ease-in-out forwards"
+            } else {
+                document.querySelector('.top').style.animation = "top-stripe-out .7s ease-in-out forwards"
+                document.querySelector('.middle').style.animation = "middle-stripe-out .7s ease-in-out forwards"
+                document.querySelector('.bottom').style.animation = "bottom-stripe-out .7s ease-in-out forwards"
+            }
+            clicked = !clicked
+        })
+    </script>
+</body>
+</html>
