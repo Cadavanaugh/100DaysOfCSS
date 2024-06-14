@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 2, 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    clip-path: circle(50% at 50% 50%);
+    background-color: rgb(76, 255, 255);
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
