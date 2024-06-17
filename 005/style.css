@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background-color: darkgreen;
+    padding: 20px;
+}
+
+.time {
+    h1 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+.money {
+    display: flex;
+    flex-direction: column;
+    align-items: end;    
+    h2 {
+        font-size: 13px;
+        font-weight: normal;
+    }
+    p {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    background-color: rgb(244, 244, 244);
+}
+
+.label {
+    font-size: 10px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    div {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        div {
+            width: 10px;
+            height: 3px;
+        }
+    }
+}
+
+.weekdays {
+    width: 100%;
+}
+
+.weekdays ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.weekdays ul li {
+    text-transform: uppercase;
+    list-style: none;
+    font-weight: lighter;
+    color: rgb(178, 178, 178);
+    font-size: 10px;
+}
+
+.graphic {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.scale-lines {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    div {
+        width: 100%;
+        height: 1px;
+        background-color: lightgray;
+    }
+}
+
+.graphic svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(0%, -100%);
+    fill: none;
+}
+
+circle {
+    cursor: pointer;
+}
+
+.line {
+    stroke-width: 2px;
+}
+
+.red {
+    stroke: red;
+}
+
+.blue {
+    stroke: blue;
+}
+
+.circle-blue {
+    fill: blue;
+}
+
+.circle-red {
+    fill: red;
+}
+
+#tooltip {
+    width: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#box {
+    font-size: 10px;
+    height: 30px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    font-weight: bold;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+}
+
+#downpin {
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    height: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: -1px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head> 
+<body>
+    <main>
+        <div class="header">
+            <div class="time">
+                <h1>Weekly Report</h1>
+                <p>06. May - 09. Aug</p>
+            </div>
+            <div class="money">
+                <h2>Revenue</h2>
+                <p>R$6000,00</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="label">
+                <div>
+                    <div style="background-color: red;"></div>
+                    <span>Views</span>
+                </div>
+                <div>
+                    <div style="background-color: blue;"></div>
+                    <span>Purchases</span>
+                </div>
+            </div>
+            <div class="graphic">
+                <div class="scale-lines">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <svg>
+                    <polyline class="line blue" points="22,150 83,130 136,155 189,120 242,140 295,150 348,110"></polyline>
+                    <circle class="circle-blue" cx="22" cy="150" r="3"/>
+                    <circle class="circle-blue" cx="83" cy="130" r="3" />
+                    <circle class="circle-blue" cx="136" cy="155" r="3" />
+                    <circle class="circle-blue" cx="189" cy="120" r="3" />
+                    <circle class="circle-blue" cx="242" cy="140" r="3" />
+                    <circle class="circle-blue" cx="295" cy="150" r="3" />
+                    <circle class="circle-blue" cx="348" cy="110" r="3" />
+                    <polyline class="line red" points="22,60 83,90 136,40 189,100 242,70 295,110 348,40"></polyline>
+                    <circle class="circle-red" cx="22" cy="60" r="3"/>
+                    <circle class="circle-red" cx="83" cy="90" r="3" />
+                    <circle class="circle-red" cx="136" cy="40" r="3" />
+                    <circle class="circle-red" cx="189" cy="100" r="3" />
+                    <circle class="circle-red" cx="242" cy="70" r="3" />
+                    <circle class="circle-red" cx="295" cy="110" r="3" />
+                    <circle class="circle-red" cx="348" cy="40" r="3" />
+                </svg>
+                <div id="tooltip">
+                    <div id="box">100</div>
+                    <div id="downpin"></div>
+                </div>
+            </div>
+            <div class="weekdays">
+                <ul>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                    <li>Sun</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
