@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(0, 3, 42);
+    height: 100vh;
+}
+
+footer {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer > p {
+    font-size: 37px;
+}
+
+.wind {
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+}
+
+.temperature-days {
+    display: flex;
+    .days {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-right: 10px;
+    }
+    .temp {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+}
+
+.hills {
+    background-color: red;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: 82px;
+}
+
+.front-hill div {
+    background-color: #303C5D;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: -40px;
+    bottom: -100px;
+    border-radius: 100%;
+}
+
+.front-hill div:nth-of-type(2) {
+    background-color: #303C5D;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    left: 100px;
+    bottom: -200px;
+    border-radius: 100%;
+}
