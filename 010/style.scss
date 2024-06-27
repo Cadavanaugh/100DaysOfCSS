@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(38,75,44);
+    background: -moz-linear-gradient(18deg, rgba(38,75,44,1) 0%, rgba(40,194,66,1) 100%);
+    background: -webkit-linear-gradient(18deg, rgba(38,75,44,1) 0%, rgba(40,194,66,1) 100%);
+    background: linear-gradient(18deg, rgba(38,75,44,1) 0%, rgba(40,194,66,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#264b2c",endColorstr="#28c242",GradientType=1);
+}
+
+main {
+    width: 300px;
+    height: 300px;
+    background-color: #242424;
+    border-radius: 100%;
+    border: 8px solid #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        display: flex;
+    }
+}
+
+h1 {
+    font-size: 57px;
+}
+
+.heart {
+    display: flex;
+    margin-right: 20px;
+}
+
+i {
+    color: red;
+    margin-right: 5px;
+    animation: heart-pulse 1s ease-in-out infinite alternate;
+}
+
+.dots {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 100%;
+}
+
+.dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: -50% -50%;
+}
+
+@for $i from 1 through 70 {
+    .dot:nth-child(#{$i}) {
+        --angle: calc(360deg / 70 * #{$i - 1});
+        transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px) rotate(calc(-1 * var(--angle)));
+    }
+}
+
+.circle-container {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+}
+
+.circle {
+    fill: none;
+    stroke: rgb(18, 236, 18);
+    stroke-width: 2px;
+    stroke-dasharray: 565.48; /* 2 * Math.PI * 90 (where 90 is the radius) */
+    stroke-dashoffset: 565.48;
+    animation: draw-circle 4s linear infinite;
+}
+
+@keyframes draw-circle {
+    0% {
+        stroke-dashoffset: 565.48;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -565.48;
+    }
+}
+
+@keyframes heart-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.2);
+    }
+}
