@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.background {
+    height: 70vh;
+    background-image: url('./assets/background\ city.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.floor {
+    height: 30vh;
+    background-image: url('./assets/sidewalk\ texture.jpg');
+    background-size: cover;
+    transform: rotateX(35px);
+}
+
+.shoe {
+    margin: 0;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: url("./assets/Allstar_side_face-removebg-preview.png") center center no-repeat;
+    background-size: contain;
+    transition: all;
+    animation: walk 2s infinite ease-in-out;
+    position: absolute;
+    bottom: -100px;
+  }
+  
+  .left {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+
+
+.feet {
+  animation: move linear 4s infinite;
+  animation-delay: .3s;
+}
+  
+  @keyframes move {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(600px, 0px);
+    }
+  }
+
+@keyframes walk {
+    0%, 100% {
+      transform: translate(90px, -30px) rotateZ(-30deg);
+    }
+    18% {
+      transform: translate(60px, 0) rotateZ(-5deg);
+    }
+    50% {
+      transform: translate(-70px, -30px) rotateZ(40deg);
+    }
+}
