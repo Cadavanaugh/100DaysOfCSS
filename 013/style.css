@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+main {
+    height: 100vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 370px 370px;
+    grid-auto-rows: 370px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    
+    img {
+        width: 370px;
+        aspect-ratio: 1/1;
+        transition: .3s;
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #ec6565;
+        border-radius: 100px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        text-transform: uppercase;
+        top: 50%;
+        transform: translateY(-50%) scale(1.5);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: 0;
+        border: 0;
+        font-size: 25px;
+        transition: .7s;
+        opacity: 0;
+    }
+
+}
+
+.picture:hover, button:hover {
+    cursor: pointer;
+}
+
+.picture:hover button {
+    transform: scale(1) translateY(-50%);
+    opacity: 1;
+}
+
+.picture:hover img {
+    filter: brightness(40%);
+}
+
+.background, .wallpaper {
+    background-color: #ec6565;
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+    top:100%;
+    transition: 1s;
+}
+
+.wallpaper {
+    top: -50%;
+    background-image: url('./assets/wallpapers/matrix\ wallpaper.jpg');
+    background-size: cover;
+}
+
+#close {
+    position: absolute;
+    top: -10%;
+    right: 5%;
+    background-color: #ec6565;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 20px;
+    border-radius: 100%;
+    border: 0;
+    outline: 0;
+    transition: .3s;
+    
+}
+
+#close:hover {
+    background-color: white;
+    color: #ec6565;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+}
+
+.background p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 65px;
+}
+
+.background div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+.background button {
+    outline: 0;
+    border: 2px solid white;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    background-color: #ec6565;
+    transition: .3s;
+}
+
+.background button:hover {
+    background-color: white;
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.background button:hover i{
+    color: #ec6565;
+}
+
+#main {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: -10%;
+    left: 50%;
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    z-index: 3;
+    border: 3px solid white;
+    transition: 1s;   
+}
