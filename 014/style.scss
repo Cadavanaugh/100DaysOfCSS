@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(90, 90, 90);    
+}
+
+.card-wrapper {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    transition: 1.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	perspective: 800px;
+    z-index: 2;
+}
+
+.card-wrapper:hover .flip-effect {
+    transform: rotateX(180deg) translate3d(0,0,0);
+}
+
+.flip-effect {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    perspective: 1000px;
+    background-color: #4eff4e;
+    border-radius: 5px;
+}
+
+img[alt='bycicle'] {
+    animation: moving .7s ease-in-out infinite;
+    transform-origin: 50% 100%;
+    position: absolute;
+    left: 38%;
+    top: 38%;
+}
+
+.floor-piece {
+    width: 30px;
+    height: 5px;
+    border-radius: 100px;
+    background-color: #4b4841;
+    position: absolute;
+    bottom: 36%;
+    left: 30%;
+    animation: floor .4s linear infinite;
+}
+
+.sky-piece {
+    width: 30px;
+    height: 5px;
+    border-radius: 100px;
+    background-color: #4b4841;
+    position: absolute;
+    left: 30%;
+    animation: floor .4s linear infinite;
+}
+
+img[alt='helicopter'] {
+    animation: flying 3s ease-in-out infinite;
+    transform-origin: 50% 100%;
+    position: absolute;
+    width: 150px;
+    left: 35%;
+    top: 38%;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
+}
+
+.back {
+    transform: rotateX(180deg);
+}
+
+@for $i from 1 through 7 {
+    .sky-piece-#{$i} {
+        @extend .floor-piece;
+        bottom: calc(10% + (90% - 10%) * random());
+    }
+}
+
+.one {
+    width: 20px;
+    animation-delay: .3s;
+    animation: floor .6s linear infinite;
+}
+
+.two {
+    width: 25px;
+    animation-delay: .2s;
+    animation: floor .8s linear infinite;
+}
+
+.three {
+    width: 20px;
+    animation-delay: .1s;
+    animation: floor 1s linear infinite;
+}
+
+.four {
+    width: 15px;
+    animation-delay: .0s;
+    animation: floor .8s linear infinite;
+}
+
+.five {
+    width: 10px;
+    animation-delay: .4s;
+    animation: floor .5s linear infinite;
+}
+
+.six {
+    width: 35px;
+    animation-delay: .2s;
+    animation: floor .6s linear infinite;
+}
+
+.seven {
+    width: 30px;
+    animation-delay: .3s;
+    animation: floor 1s linear infinite;
+}
+
+@keyframes moving {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.05);
+    }
+}
+
+
+@keyframes floor {
+  100% {
+    left: 20%;
+  }
+  0% {
+    left: 75%;
+  }
+}
+
+@keyframes flying {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    40% {
+        transform: translateY(30px);
+    }
+
+    60% {
+        transform: translateY(25px);
+    }
+    
+    80% {
+        transform: translateY(30px);
+    }
+
+}
