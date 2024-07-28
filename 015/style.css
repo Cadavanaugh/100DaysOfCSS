@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    background: rgb(203,68,219);
+    background: -moz-radial-gradient(circle, rgba(203,68,219,1) 0%, rgba(87,87,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(203,68,219,1) 0%, rgba(87,87,255,1) 100%);
+    background: radial-gradient(circle, rgba(203,68,219,1) 0%, rgba(87,87,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cb44db",endColorstr="#5757ff",GradientType=1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 400px;
+    height: 400px;
+    backdrop-filter: blur(21px) saturate(200%);
+    -webkit-backdrop-filter: blur(21px) saturate(200%);
+    background-color: rgba(247, 247, 247, 0.44);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#upload {
+    display: none;
+}
+
+img {
+    width: 100px;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+button {
+    width: 30%;
+    font-weight: bold;
+    outline: 0;
+    border: 0;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: rgb(156, 26, 255);
+    transition: .3s;
+    color: white
+}
+
+button:hover {
+    background-color: rgb(118, 20, 193);
+    cursor: pointer;
+}
+
+.upload-area {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        width: 50px;
+        height: 50px;
+        filter: invert(1);
+        transition: all .5s;
+    }
+}
+
+.is-dragover {
+    background-color: #cccccc;
+}
+
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.loading {
+    width: 200px;
+    animation: load 1s linear infinite;
+}
+
+.progress {
+    width: 200px;
+    height: 5px;
+    border-radius: 100px;
+    background-color: rgb(59, 59, 59);
+    display: none;
+
+    .fill {
+        width: 0px;
+        height: 5px;
+        border-radius: 100px;
+        background-color: rgb(162, 247, 64);
+        animation: progressbar 3s ease-out;
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes progressbar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
