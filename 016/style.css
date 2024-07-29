@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(68, 202, 219);
+  background: -moz-linear-gradient(180deg, rgb(68, 202, 219) 0%, rgb(87, 87, 255) 100%);
+  background: -webkit-linear-gradient(180deg, rgb(68, 202, 219) 0%, rgb(87, 87, 255) 100%);
+  background: linear-gradient(180deg, rgb(68, 202, 219) 0%, rgb(87, 87, 255) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#44cadb",endColorstr="#5757ff",GradientType=1);
+}
+
+.circle {
+  background-color: white;
+  position: absolute;
+  left: 45%;
+  width: 150px;
+  height: 150px;
+  animation: circle 4s linear infinite;
+  clip-path: circle(50% at 50% 50%);
+}
+
+@keyframes circle {
+  /* Caindo pro meio */
+  0% {
+    top: -25%;
+    transform: scale(1);
+  }
+  10% {
+    top: 40%;
+    transform: scale(1);
+  }
+  /* Virando octogono */
+  15% {
+    top: 40%;
+    transform: scale(0);
+    clip-path: circle(50% at 50% 50%);
+  }
+  20% {
+    top: 40%;
+    transform: scale(1.2);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  24% {
+    top: 40%;
+    transform: scale(0.9);
+  }
+  30% {
+    top: 40%;
+    transform: scale(1);
+  }
+  32%, 34% {
+    top: 40%;
+    transform: scale(1);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  /* Virando triangulo */
+  40% {
+    top: 40%;
+    transform: scale(0);
+  }
+  45% {
+    top: 40%;
+    transform: scale(1.2);
+    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+  }
+  50% {
+    top: 40%;
+    transform: scale(0.9);
+  }
+  56% {
+    top: 40%;
+    transform: scale(1);
+  }
+  60%, 62% {
+    top: 40%;
+    transform: scale(1);
+    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+  }
+  /* Virando circulo */
+  70% {
+    top: 40%;
+    transform: scale(0);
+    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+  }
+  75% {
+    top: 40%;
+    transform: scale(1.2);
+    clip-path: circle(50% at 50% 50%);
+  }
+  81% {
+    top: 40%;
+    transform: scale(0.9);
+  }
+  85%, 87% {
+    top: 40%;
+    transform: scale(1);
+  }
+  97% {
+    top: 100%;
+  }
+}
+.circle-border {
+  border: 3px solid white;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  animation: circle-border 4s linear infinite;
+  opacity: 0;
+}
+
+@keyframes circle-border {
+  70% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  85% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.tri-sparkles, .oct-sparkles {
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  transform: rotate(-90deg);
+  top: 49%;
+  left: 50%;
+  animation: tri-sparkles 4s linear infinite;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  opacity: 0;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 40px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.tri-sparkles .dot:nth-child(1) {
+  --angle: calc(360deg / 3 * 0);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.tri-sparkles .dot:nth-child(2) {
+  --angle: calc(360deg / 3 * 1);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.tri-sparkles .dot:nth-child(3) {
+  --angle: calc(360deg / 3 * 2);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+@keyframes tri-sparkles {
+  /* Virando triangulo */
+  40% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(0);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(1.2);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(1.5);
+  }
+}
+@keyframes oct-sparkles {
+  15% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-22.5deg) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-22.5deg) scale(1.2);
+  }
+  30% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-22.5deg) scale(1.5);
+  }
+}
+.oct-sparkles .dot:nth-child(1) {
+  --angle: calc(360deg / 8 * 0);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(2) {
+  --angle: calc(360deg / 8 * 1);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(3) {
+  --angle: calc(360deg / 8 * 2);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(4) {
+  --angle: calc(360deg / 8 * 3);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(5) {
+  --angle: calc(360deg / 8 * 4);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(6) {
+  --angle: calc(360deg / 8 * 5);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(7) {
+  --angle: calc(360deg / 8 * 6);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles .dot:nth-child(8) {
+  --angle: calc(360deg / 8 * 7);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(130px);
+}
+
+.oct-sparkles {
+  animation: oct-sparkles 4s linear infinite;
+  top: 48%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.css.map */
