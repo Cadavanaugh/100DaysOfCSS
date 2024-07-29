@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("illusion.gif");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  backdrop-filter: blur(15px) saturate(0%);
+  -webkit-backdrop-filter: blur(15px) saturate(0%);
+  background-color: rgba(17, 25, 40, 0.27);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  width: 500px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polygon {
+  width: 160px;
+  height: 140px;
+  transform: scale(2.3);
+}
+.polygon .light {
+  fill: #eee;
+  transition: all 0.5s ease-in-out;
+}
+.polygon .middle {
+  fill: #ccc;
+  transition: all 0.5s ease-in-out;
+}
+.polygon .dark {
+  fill: #aaa;
+  transition: all 0.5s ease-in-out;
+}
+.polygon:hover .light {
+  fill: #aaa;
+}
+.polygon:hover .middle {
+  fill: #eee;
+}
+.polygon:hover .dark {
+  fill: #ccc;
+}
+
+/*# sourceMappingURL=style.css.map */
