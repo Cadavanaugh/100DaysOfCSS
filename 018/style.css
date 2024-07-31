@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.preto, .verde {
+    width: 100vw;
+    height: 50vh;
+}
+
+.preto {
+    background-color: #444444;
+}
+
+.verde {
+    background-color: #37d493;
+}       
+
+.elipse {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 100%;
+    background-color: #37d493;  
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0, -50%);
+    animation: elastic 5s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.frente, .tras {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #444;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    z-index: 2;
+    transform: rotateX(0);
+}
+.frente {
+    background: #37D493;
+    z-index: 1;
+    transform: rotateX(180deg);
+}
+
+@keyframes elastic {
+    0% {
+      transform: translate(0, -50%) rotateX(90deg);
+    }
+    15% {
+      transform: translate(0, -50%) rotateX(150deg);
+    }
+    20% {
+      transform: translate(0, -50%) rotateX(50deg);
+    }
+    25% {
+      transform: translate(0, -50%) rotateX(120deg);
+    }
+    30% {
+      transform: translate(0, -50%) rotateX(70deg);
+    }
+    35% {
+      transform: translate(0, -50%) rotateX(100deg);
+    }
+    40% {
+      transform: translate(0, -50%) rotateX(83deg);
+    }
+    45% {
+      transform: translate(0, -50%) rotateX(93deg);
+    }
+    50% {
+      transform: translate(0, -50%) rotateX(90deg);
+    }
+    65% {
+      transform: translate(0, -50%) rotateX(30deg);
+    }
+    70% {
+      transform: translate(0, -50%) rotateX(130deg);
+    }
+    75% {
+      transform: translate(0, -50%) rotateX(60deg);
+    }
+    80% {
+      transform: translate(0, -50%) rotateX(110deg);
+    }
+    85% {
+      transform: translate(0, -50%) rotateX(80deg);
+    }
+    90% {
+      transform: translate(0, -50%) rotateX(97deg);
+    }
+    95% {
+      transform: translate(0, -50%) rotateX(87deg);
+    }
+    100% {
+      transform: translate(0, -50%) rotateX(90deg);
+    }
+  }
