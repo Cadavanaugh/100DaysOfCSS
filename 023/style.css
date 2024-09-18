@@ -10,6 +10,10 @@ body {
     text-transform: uppercase;
     color: white;
     font-size: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 main {
@@ -18,12 +22,131 @@ main {
     align-items: center;
 }
 
+@keyframes upper-text-enter-slide {
+    from {
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
+    animation: upper-text-enter-slide 1s ease-in-out forwards;
+}
+@keyframes bottom-text-enter-slide {
+    from {
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+p:nth-of-type(2) {
+    animation: bottom-text-enter-slide 1s ease-in-out forwards;
 }
 
 h1 {
     font-weight: bold;
     margin: 10px 0px;
+}
+
+/* ========================animation-elements======================== */
+
+.animation-elements {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0);
+        display: none;
+    }
+}
+.circle {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    animation: shrink 1s ease-in forwards;
+}
+
+@keyframes grow-bar {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 900px;
+    }
+}
+.white-bar {
+    width: 0px;
+    height: 10px;
+    background-color: white;
+    animation: grow-bar .6s ease-in-out forwards;
+    animation-delay: 1s;
+    position: relative;
+}
+
+.salmon-bar {
+    width: 0px;
+    height: 15px;
+    background-color: #e16d6c;
+    animation: grow-bar .6s ease-in-out forwards;
+    animation-delay: 1.6s;
+    position: absolute;
+}
+
+@keyframes lateral-bars-animation {
+    from {
+        visibility: hidden;
+    }
+    to {
+        visibility: visible;
+    }
+}
+.lateral-bars {
+    height: 200px;
+    visibility: hidden;
+    width: 900px;
+    border: 10px solid white;
+    animation: grow-bar .6s ease-in-out forwards;
+    animation-delay: 2.2s;
+    animation: lateral-bars-animation 1s ease-in-out 2.2s forwards;
+    position: absolute;
+}
+
+.hider-salmon-bar {
+    width: 765px;
+    height: 12px;
+    background-color: #e16d6c;
+    margin: 0 auto;
+    position: relative;
+}
+
+.upper {
+    top: -11px;
+}
+.under {
+    top: 167px;
 }
