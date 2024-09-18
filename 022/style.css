@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0,11,40);
+    background: -moz-linear-gradient(0deg, rgba(0,11,40,1) 0%, #001863 100%);
+    background: -webkit-linear-gradient(0deg, rgba(0,11,40,1) 0%, rgba(0,24,99,1) 100%);
+    background: linear-gradient(0deg, rgba(0,11,40,1) 0%, rgba(0,24,99,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000b28",endColorstr="#001863",GradientType=1);
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(1fr, 3);
+    justify-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {    
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.torus {
+    position: relative;
+    width: 400px;
+}
+
+main > .torus {
+    width: 200px;
+}
+
+.writing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.writing {
+    p:nth-of-type(1) {
+        font-size: 30px;
+        border-bottom: 5px;
+    }
+
+    p:nth-of-type(2) {
+        font-size: 16px;
+        color: #969696;
+    }
+}
+
+.bottom-two {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bottom-two .writing p:first-of-type {
+    font-size: 24px;
+}
+
+.bottom-two .torus svg {
+    transform: translateX(100px) rotate(180deg);
+}
+
+#km {
+    transform: translateX(100px) rotate(80deg);
+}

@@ -28,6 +28,7 @@ body {
     position: absolute;
     top: 56px;
     right: 80px;
+    animation: eyemove .3s infinite alternate linear;
 }
 
 .mouth {
@@ -48,6 +49,15 @@ body {
     }
     to {
         clip-path: polygon(0 50%, 100% 50%, 100% 50%);
+    }
+}
+
+@keyframes eyemove {
+    from {
+        transform: translate(0px,0px);
+    }
+    to {
+        transform: translate(10px,10px);
     }
 }
 
