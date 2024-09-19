@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button>FINISH</button>
+    <svg width="100" height="100" viewBox="0 0 100 100" class="torus">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke-width="2" stroke="#00000020"/>
+        <circle id="inner" cx="50" cy="50" r="40" fill="transparent" stroke-width="1.8" stroke="white" stroke-dasharray="251.3274122871835 251.3274122871835" stroke-dashoffset="251.3274122871835">
+            <animate attributeName="stroke-dashoffset" from="251.3274122871835" to="0" dur="1s" fill="freeze" easing="ease-in-out" begin="1.5s"/>
+            <animate attributeName="opacity" from="1" to="0" dur="1s" fill="freeze" easing="ease-in-out" begin="stroke-dashoffset.end"/>
+        </circle>
+    </svg>
+    <div class="sparkle"></div>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic-00.iconduck.com%2Fassets.00%2Fcheckmark-running-icon-1024x1024-aakqv1qi.png&f=1&nofb=1&ipt=784fa1d32843d00d8f9eef829996081f336621358a92dfb768357607cd6a618c&ipo=images" alt="checkmark">
+</body>
+</html>
