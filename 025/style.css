@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #2196F3;
+    overflow: hidden;
+}
+
+svg {
+    fill: #1F8DE4;
+}
+
+.marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+.marker > img {
+    height: 100px;
+    aspect-ratio: 1/1;
+    animation: floating 3s infinite;
+}
+
+@keyframes shadowing {
+    0%,100% {
+        transform: scale(0.9);
+        opacity: .2;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: .4;
+    }
+}
+.shadow {
+    width: 25px;
+    height: 5px;
+    background-color: black;
+    opacity: .4;
+    border-radius: 100%;
+    animation: shadowing 3s infinite;
+}
+
+.perspective {
+    perspective: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(0deg);
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.75);
+    padding-bottom: 15px;
+    visibility: hidden;
+    transition: .5s;
+    opacity: 0;
+}
+
+.img {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.guiaviagensbrasil.com%2Fimagens%2Flojas-praia-do-forte-ba.jpg&f=1&nofb=1&ipt=1768bb98bf189ee2c1e3ad18bf0ebd9c3ef24ab30befedf74ff3337327c62ca5&ipo=images');
+    width: 100%;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: lighter;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons div {
+    width: 100%;
+    text-align: center;
+    color: #1F8DE4;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.buttons div:nth-child(1) {
+    border-right: 1px solid #1F8DE4;
+}
