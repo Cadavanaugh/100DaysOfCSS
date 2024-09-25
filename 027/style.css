@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5e7c8b;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;background: rgb(200,138,27);
+    background-image: url('https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY-1200-80.jpg');
+}
+
+main {
+    background-color: rgb(231, 231, 231);
+    box-shadow: 1px 1px 71px 14px rgba(255,255,255,0.75);
+    -webkit-box-shadow: 1px 1px 71px 14px rgba(255,255,255,0.75);
+    -moz-box-shadow: 1px 1px 71px 14px rgba(255,255,255,0.75);
+    border-radius: 3px;
+    padding: 30px;
+    width: 280px;
+}
+
+.current-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-weight: normal;
+        font-size: 12px;
+    }
+}
+
+hr {
+    margin: 30px 0;
+    opacity: .5
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+
+    p {
+        font-size: 15px;
+        transition: .4s;
+    }
+}
+
+.task > svg:first-of-type {
+    transition: .4s;
+}
+
+.checkmark {
+    position: absolute;
+    right: 1%;
+    top: 15%;
+    z-index: 3;
+    stroke-dasharray: 30 30;
+    stroke-dashoffset: 30;
+    transition: .4s;
+    transition-delay: .4s;
+}
+
+img {
+    position: absolute;
+}
+
+img[alt="Terra"] {
+    width: 300px;
+    left: 10%;
+    top: 10%;
+}
+img[alt="Saturno"] {
+    width: 200px;
+    right: 15%;
+    bottom: 5%;
+}
+img[alt="other"] {
+    width: 100px;
+    right: 8%;
+    top: 8%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-3deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+img[alt="Terra"] {
+    animation: float 2s ease-in-out infinite;
+}
+img[alt="Saturno"] {
+    animation: float 2s ease-in-out infinite;
+    animation-delay: .2s;
+}
+img[alt="other"] {
+    animation: float 2s ease-in-out infinite;
+    animation-delay: .4s;
+}
+
