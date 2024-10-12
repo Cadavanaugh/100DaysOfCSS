@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: rgb(0, 136, 173);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F543%2F723%2Foriginal%2Ffuturistic-globe-digital-transformation-abstract-technology-background-big-data-earth-and-business-and-investment-economy-vector-illustration.jpg&f=1&nofb=1&ipt=1ed6d9ae8633cbd56541aaf032eacc10277f24bb8334e53432c2dd1b543443a2&ipo=images');
+    background-size: cover;
+    background-position: right;
+
+}
+
+input {
+    background-color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 0;
+    outline: none;
+    width: 300px;
+    caret-color: rgb(0, 85, 255);
+    border: 1px solid rgb(0, 136, 173);
+
+    &::placeholder {
+        font-weight: bold;
+        font-size: 0.8rem;
+        color: rgb(179, 179, 179)
+    }
+    box-shadow: -1px 10px 17px -4px rgba(0,0,0,0.53);
+    -webkit-box-shadow: -1px 10px 17px -4px rgba(0,0,0,0.53);
+    -moz-box-shadow: -1px 10px 17px -4px rgba(0,0,0,0.53);
+}
+
+.search {
+    position: relative;
+    background-color: red;
+}
+
+i {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1.2);
+    top: 50%;
+    right: 5%;
+    color: rgb(0, 136, 173);
+}
+
+ul {
+    list-style-type: none;
+    max-width: 300px;
+}
+
+ul li {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+
+    &:hover {
+        color: rgb(0, 136, 173);
+        cursor: pointer;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
